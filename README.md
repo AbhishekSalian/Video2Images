@@ -23,10 +23,8 @@ The main reason why I created this library is to ease the video to image frames 
 
 
 ## Requirements
-- pip install tqdm
-- pip install imageio
-- pip install imageio-ffmpeg
-- pip install moviepy
+It will be automatically installed
+- tqdm, imageio, imageio-ffmpeg, moviepy
 
 ## Class Object Argument Description
 <table>
