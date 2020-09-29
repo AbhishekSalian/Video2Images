@@ -9,7 +9,7 @@
 ## About
 A library that helps to convert volumetric video data into image frames with adjustable frame capturing rate functionality.
 
-The main reason why I created this library is ease of video to image frames conversion. During video annotation we need individual frames of an video or a subpart of a video and that to tunable frame rate so this problems led to this library which easily helps you to do this task.
+The main reason why I created this library is to ease the video to image frames conversion process. During video annotation we need frames of an video or a subpart of a video and that too custom frame capture rate, so this problems led to this library development.
 
 ## How to install?
 ```pip install video2images```
