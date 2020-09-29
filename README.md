@@ -113,7 +113,7 @@ Video2Images(video_filepath="--path-to-video-file--",
 
 ```
 
->**Note**:- The output will be saved in a folder named frames_folder_{timestamp}
+#### **Note**:- The output will be saved in a folder named frames_folder_{timestamp}
 
 
 ## Author
