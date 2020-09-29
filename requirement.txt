@@ -1,0 +1,4 @@
+pip install tqdm
+pip install imageio
+pip install imageio-ffmpeg
+pip install moviepy
