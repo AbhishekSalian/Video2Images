@@ -79,10 +79,11 @@ class Video2Images:
         else:
 
             # Checking if output directory exist or not
-            print(self.out_dir)
+            # print(self.out_dir)
             if os.path.exists(self.out_dir):
 
                 os.mkdir(self.out_dir + os.path.sep + folder)
+
                 self.out_dir = self.out_dir + os.path.sep + folder
 
             else:
@@ -189,10 +190,6 @@ class Video2Images:
             sys.exit("Capture rate cannot be greater than maximum FPS of input video")
 
         duration = meta_data['duration']
-
-        print("Frames per Sec", FPS)
-
-        print(meta_data)
 
         image_count = 1
 
