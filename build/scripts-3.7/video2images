@@ -1,0 +1,87 @@
+#!python
+
+import argparse
+from video2images import Video2Images
+import os
+
+
+if __name__ == '__main__':
+
+    parser = argparse.ArgumentParser(
+        description="Video to Image frame converter"
+    )
+
+    parser._action_groups.pop()
+
+    required = parser.add_argument_group("required arguments")
+
+    optional = parser.add_argument_group("optional arguments")
+
+    required.add_argument(
+        "--filepath",
+        type=int,
+        help="The path to the video file",
+        required=True)
+
+    optional.add_argument(
+        "--start_time",
+        type=int,
+        help="start time is time point(in sec) from where \
+             the input video clip should be started",
+        default=None)
+
+    optional.add_argument(
+        "--end_time",
+        type=int,
+        help="end time is time point(in sec) till where \
+              the input video clip should be ended",
+        default=None)
+
+    optional.add_argument(
+        "--capture_rate",
+        type=int,
+        help="It is time interval(in sec) after which \
+              the frames should captured and saved",
+        default=None)
+
+    optional.add_argument(
+        "--save_format",
+        type=str,
+        help="The output image format",
+        default=".jpg")
+
+    optional.add_argument(
+        "--out_dir",
+        type=str,
+        help="The output directory path where we want to save\
+              the extracted clip (if any) and the frames",
+        default=None)
+
+    # parsing all arguments
+    args = parser.parse_args()
+
+    # parsing video filepath
+    video_filepath = args.video_file_path
+
+    # parsing start time
+    start_time = args.start_time
+
+    # parsing end time
+    end_time = args.end_time
+
+    # parsing capture rate
+    capture_rate = args.capture_rate
+
+    # parsing save format for the output image
+    save_format = args.save_format
+
+    # parsing output directory path
+    out_dir = args.out_dir
+
+    # Instaniate the Video2Images object
+    Video2Images(video_filepath=video_filepath,
+                 start_time=start_time,
+                 end_time=end_time,
+                 capture_rate=capture_rate,
+                 save_format=save_format,
+                 out_dir=out_dir)

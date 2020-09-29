@@ -187,17 +187,15 @@ class Video2Images:
         # Getting Frames per second value
         FPS = meta_data['fps']
 
+        if self.capture_rate >= FPS:
+            sys.exit("Capture rate cannot be greater than maximum FPS of input video")
+
         duration = meta_data['duration']
 
         image_count = 1
 
         # Capture rate after how many sec need to save the image
         if self.capture_rate is not None:
-
-            # Check if capture is >= to the input video FPS
-            if self.capture_rate >= FPS:
-
-                sys.exit("Capture rate cannot be greater than maximum FPS of input video")
 
             FPS = int(FPS/self.capture_rate)
 
