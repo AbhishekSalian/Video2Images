@@ -1,4 +1,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PyPI version](https://badge.fury.io/py/video2images.svg)](https://badge.fury.io/py/video2images)
+![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)
+![Python3](https://img.shields.io/badge/python->=3.5-green.svg)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![install](https://img.shields.io/badge/pip%20install-video2images-green)](https://pypi.org/project/video2images/)
+
+
 
 
 <p align="center">
