@@ -1,4 +1,0 @@
-tqdm
-imageio
-moviepy
-imageio-ffmpeg>=0.4.2
