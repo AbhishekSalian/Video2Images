@@ -9,7 +9,7 @@
 
 
 <p align="center">
-<img src="./image/logo.png"></a>
+<img src="https://raw.githubusercontent.com/AbhishekSalian/Video2Images/master/image/logo.png"></a>
 </p>
 
 
