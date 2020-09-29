@@ -61,8 +61,9 @@ class Video2Images:
         self.out_dir = out_dir
 
         # Capture rate should not be negative condition check
-        if capture_rate <= 0 and capture_rate is not None:
-            sys.exit("Frame Capture Rate cannot be <= 0")
+        if capture_rate is not None:
+            if capture_rate <= 0:
+                sys.exit("Frame Capture Rate cannot be <= 0")
 
         # Folder time stamp
         folder = "frames_folder" + str(dt.now().strftime('%Y-%m-%d %H:%M:%S'))
