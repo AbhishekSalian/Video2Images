@@ -29,7 +29,7 @@ if __name__ == "__main__":
     setup(
         name="video2images",
         scripts=["scripts/video2images"],
-        version="0.0.7",
+        version="0.1.0",
         description="Video 2 Image converter",
         long_description=long_description,
         long_description_content_type="text/markdown",
