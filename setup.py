@@ -22,22 +22,22 @@ SHORT_DESC = "This is a random word generator module"
 requirements = ["tqdm",
                 "imageio",
                 "moviepy",
-                "imageio-ffmpeg"]
+                "imageio-ffmpeg>=0.4.2"]
 
 
 if __name__ == "__main__":
     setup(
-        name="VIDEO2IMAGES",
+        name="video2images",
         scripts=["scripts/video2images"],
-        version="0.0.1",
+        version="0.0.7",
         description="Video 2 Image converter",
         long_description=long_description,
         long_description_content_type="text/markdown",
         author="Abhishek C. Salian",
         author_email="abhishek.c.salian@gmail.com",
-        url="",
+        url="https://github.com/AbhishekSalian/Video2Images",
         license="MIT License",
-        packages=find_packages(exclude=["*tests*"]),
+        packages=find_packages(),
         package_data={'': ['LICENSE', 'README.md']},
         include_package_data=True,
         install_requires=requirements,
