@@ -62,20 +62,30 @@ class Video2Images:
 
         # Capture rate should not be negative condition check
         if capture_rate is not None:
+
             if capture_rate <= 0:
-                sys.exit("Frame Capture Rate cannot be <= 0")
+
+                sys.exit("\033[1;31m Capture Frame Capture Rate cannot be <= 0 \033[00m")
 
         # Folder time stamp
-        folder = "frames_folder" + str(dt.now().strftime('%Y-%m-%d %H:%M:%S'))
+        folder_name = "frames_folder_" + str(dt.now().strftime('%Y-%m-%d %H:%M:%S'))
 
         # If output directory is not specified
         if self.out_dir is None:
 
-            os.mkdir(os.getcwd() + os.path.sep + folder)
+            # Take all path expect the video name
+            path_ = '/'.join(self.video_filepath.split(os.path.sep)[:-1])
 
-            self.out_dir = os.path.join(os.getcwd(), folder, )
+            # Concatenating path with folder name
+            path_ = path_ + os.path.sep + folder_name
 
-            print("Making directory in", self.out_dir)
+            # Making directory
+            os.mkdir(path_)
+
+            # Assigning output path variable the path_
+            self.out_dir = os.path.join(path_, )
+
+            print("\033[1;36m -> Making directory in", self.out_dir, "\033[00m")
 
         else:
 
@@ -83,12 +93,12 @@ class Video2Images:
             # print(self.out_dir)
             if os.path.exists(self.out_dir):
 
-                os.mkdir(self.out_dir + os.path.sep + folder)
+                os.mkdir(self.out_dir + os.path.sep + folder_name)
 
-                self.out_dir = self.out_dir + os.path.sep + folder
+                self.out_dir = self.out_dir + os.path.sep + folder_name
 
             else:
-                sys.exit("Output directory doesnot exist! Please check the output path")
+                sys.exit("\033[1;31m Output directory doesnot exist! Please check the output path \033[00m")
 
         # Getting base vide filename
         video_filename = self.video_filepath.split(os.path.sep)[-1]
@@ -106,22 +116,22 @@ class Video2Images:
         # Checking for valid input video file extension
         if file_extension not in VIDEO_EXTENSIONS:
 
-            sys.exit("Input a Valid Video File")
+            sys.exit("\033[1;31m Input a Valid Video File \033[00m")
 
         # Checking for valid output image file extension format
         if self.save_format not in IMAGE_EXTENSIONS:
 
-            sys.exit("Input a valid image format")
+            sys.exit("\033[1;31m Input a valid image format \033[00m")
 
         # Getting duration of the original inout video
         video_duration, vformat = self.__getDuration()
 
-        print("Video Duration is-" + f"{vformat[0]}:{vformat[1]}:{vformat[2]}")
+        print(" Video Duration is " + f"\033[1;33m{vformat[0]}hr: {vformat[1]}min: {vformat[2]}sec \033[00m")
 
         # Checking if the input end time is > total duration of video or not
         if self.end_time is not None and self.end_time > video_duration:
 
-            sys.exit("End time is greater than total duration of video")
+            sys.exit("\033[1;31m End time is greater than total duration of video \033[00m")
 
         # Video clip extraction from original video input
         if self.start_time is not None or self.end_time is not None:
@@ -154,7 +164,7 @@ class Video2Images:
 
         Returns:
             video duration &
-            [hours , minutes , seconds]  
+            [hours , minutes , seconds]
         """
 
         # Reading the video file
@@ -185,7 +195,11 @@ class Video2Images:
         meta_data = video_reader.get_meta_data()
 
         # Getting Frames per second value
-        FPS = meta_data['fps']
+        FPS = int(meta_data['fps'])
+
+        print(" The input Video FPS is", FPS, "frames/sec")
+
+        print(" Capture rate is", self.capture_rate, "frames/sec")
 
         duration = meta_data['duration']
 
@@ -195,26 +209,43 @@ class Video2Images:
         if self.capture_rate is not None:
 
             # Check if capture is >= to the input video FPS
-            if self.capture_rate >= FPS:
+            if self.capture_rate > FPS:
 
-                sys.exit("Capture rate cannot be greater than maximum FPS of input video")
+                sys.exit("\033[1;31m Capture rate cannot be greater than maximum FPS of input video \033[00m")
 
-            FPS = int(FPS/self.capture_rate)
+        else:
+
+            # capture all frames
+            self.capture_rate = FPS
+
+        # Cycle counter
+        counter = 0
+
+        # Cycle is equal to capture rate by user
+        cycle = self.capture_rate
 
         # Iterate over entire frames in video
-        for i, img in tqdm(enumerate(video_reader),
-                           desc="Capturing...",
-                           unit="frames",
-                           total=int(duration*meta_data['fps'])):
+        for _, img in tqdm(enumerate(video_reader),
+                           desc="\033[1;37m Capturing Frames... \033[00m",
+                           unit="iter",
+                           total=int(round(duration)*meta_data['fps'])):
 
-            # main capture frame logic
-            if (i+1) % FPS == 0:
+            # counter increment
+            counter += 1
+
+            # if counter is less than cycle
+            if counter <= cycle:
 
                 imageio.imsave(
-                    os.path.join(self.out_dir, '%08d.jpg' % image_count),
+                    os.path.join(self.out_dir, f'{image_count}{self.save_format}'),
                     im=img
                     )
 
                 image_count += 1
 
-        print("Done. Total frames captured:", image_count)
+            # if counter is equal to the last frame then reset the counter
+            if counter == FPS:
+
+                counter = 0
+
+        print(f"\033[1;32;40m Done. Total frames captured: {image_count-1} \033[00m")
