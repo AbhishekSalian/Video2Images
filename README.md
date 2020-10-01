@@ -49,7 +49,7 @@ It will be automatically installed
   </tr>
   <tr>
     <td>capture_rate</td>
-    <td>No. of frames you want to capture per second.<br>For e.g if my capture_rate= 20 then only first 20<br>frames will captured out of input Frames per second</td>
+    <td>No. of frames you want to capture per second.<br>For e.g if my capture_rate= 20 then only first 20<br>frames will captured out of input Frames per second rate</td>
   </tr>
   <tr>
     <td>save_format</td>
