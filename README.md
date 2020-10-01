@@ -49,7 +49,7 @@ It will be automatically installed
   </tr>
   <tr>
     <td>capture_rate</td>
-    <td>No. of frames you want to capture per second<br>for e.g if capture_rate=2 &amp; if FPS=20 then in <br>1 sec 2 frames would only be saved rather than <br>20 frames. </td>
+    <td>No. of frames you want to capture per second.<br>For e.g if my capture_rate= 20 then only first 20<br>frames will captured out of input Frames per second</td>
   </tr>
   <tr>
     <td>save_format</td>
@@ -61,6 +61,14 @@ It will be automatically installed
   </tr>
 </tbody>
 </table>
+</br>
+
+#### **Note**:- The capture_rate if not specified will consider the original video frames per second rate
+
+## Frame Capture Rate Explaination
+<p align="center">
+<img src="https://raw.githubusercontent.com/AbhishekSalian/Video2Images/master/image/capture%20rate.png"></a>
+</p>
 
 ## Valid Extensions
 
@@ -106,6 +114,15 @@ Video2Images(video_filepath="--path-to-video-file--",
              out_dir="--path-to-output-directory--")
 
 ```
+### Want only first 'f' frames out of 30 frames per second
+```
+from video2images import Video2Images
+
+# Let say f = 20 i.e capturing only first 20 frames
+Video2Images(video_filepath="--path-to-video-file--",
+             capture_rate=20,
+             out_dir="--path-to-output-directory--")
+```
 
 ### Want output image to be saved in png or other format
 ```
@@ -118,8 +135,16 @@ Video2Images(video_filepath="--path-to-video-file--",
 
 ```
 
+
 #### **Note**:- The output will be saved in a folder named frames_folder_{timestamp}
 
+
+## Output Process Screenshot
+
+
+<p align="left">
+<img src="https://raw.githubusercontent.com/AbhishekSalian/Video2Images/master/image/output_ss.png"></a>
+</p>
 
 ## Author
 
