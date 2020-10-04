@@ -118,6 +118,7 @@ Video2Images(video_filepath="--path-to-video-file--",
 ```
 from video2images import Video2Images
 
+
 # Let say f = 20 i.e capturing only first 20 frames
 Video2Images(video_filepath="--path-to-video-file--",
              capture_rate=20,
