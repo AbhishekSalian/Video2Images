@@ -165,8 +165,8 @@ I will be happy to connect with you guys!!
   year         = 2020,
   publisher    = {Zenodo},
   version      = {v1.1},
-  doi          = {10.5281/zenodo.4384148},
-  url          = {https://doi.org/10.5281/zenodo.4384148}
+  doi          = {10.5281/zenodo.4384147},
+  url          = {http://doi.org/10.5281/zenodo.4384147}
 }
 ```
 
