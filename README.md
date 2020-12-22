@@ -160,11 +160,11 @@ I will be happy to connect with you guys!!
 ```
 @software{abhishek_c_salian_2020_4384148,
   author       = {Abhishek C. Salian},
-  title        = {AbhishekSalian/Video2Images v1.0},
+  title        = {Video2Images: A python library for video frames extraction for video annotation based task},
   month        = dec,
   year         = 2020,
   publisher    = {Zenodo},
-  version      = {v1.0},
+  version      = {v1.1},
   doi          = {10.5281/zenodo.4384148},
   url          = {https://doi.org/10.5281/zenodo.4384148}
 }
