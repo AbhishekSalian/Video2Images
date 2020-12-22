@@ -5,7 +5,7 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![install](https://img.shields.io/badge/pip%20install-video2images-green)](https://pypi.org/project/video2images/)
 
-
+[![DOI](https://zenodo.org/badge/299598465.svg)](https://zenodo.org/badge/latestdoi/299598465)
 
 
 <p align="center">
