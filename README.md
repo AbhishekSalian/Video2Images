@@ -156,4 +156,16 @@ I will be happy to connect with you guys!!
 [Twitter](https://www.twitter.com/@ACSalian)
 
 
+## Citation
+@software{abhishek_c_salian_2020_4384148,
+  author       = {Abhishek C. Salian},
+  title        = {AbhishekSalian/Video2Images v1.0},
+  month        = dec,
+  year         = 2020,
+  publisher    = {Zenodo},
+  version      = {v1.0},
+  doi          = {10.5281/zenodo.4384148},
+  url          = {https://doi.org/10.5281/zenodo.4384148}
+}
+
 ### **Any suggestions are most welcome.**
