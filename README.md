@@ -157,6 +157,7 @@ I will be happy to connect with you guys!!
 
 
 ## Citation
+```
 @software{abhishek_c_salian_2020_4384148,
   author       = {Abhishek C. Salian},
   title        = {AbhishekSalian/Video2Images v1.0},
@@ -167,5 +168,6 @@ I will be happy to connect with you guys!!
   doi          = {10.5281/zenodo.4384148},
   url          = {https://doi.org/10.5281/zenodo.4384148}
 }
+```
 
 ### **Any suggestions are most welcome.**
