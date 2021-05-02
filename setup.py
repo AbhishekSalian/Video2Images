@@ -17,7 +17,7 @@ classifiers = [
                "Natural Language :: English"
               ],
 
-SHORT_DESC = "This is a random word generator module"
+SHORT_DESC = "This module will convert video frames into images for annotations"
 
 requirements = ["tqdm",
                 "imageio",
@@ -30,7 +30,7 @@ if __name__ == "__main__":
     setup(
         name="video2images",
         scripts=["scripts/video2images"],
-        version="0.1.4",
+        version="0.1.5",
         description="Video 2 Image converter",
         long_description=long_description,
         long_description_content_type="text/markdown",
