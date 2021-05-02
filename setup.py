@@ -17,6 +17,7 @@ classifiers = [
                "Natural Language :: English"
               ],
 
+SHORT_DESC = "A library for video frames to image converter"
 
 requirements = ["tqdm",
                 "imageio",
