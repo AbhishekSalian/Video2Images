@@ -61,7 +61,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # parsing video filepath
-    video_filepath = args.video_file_path
+    video_filepath = args.video_filepath
 
     # parsing start time
     start_time = args.start_time
