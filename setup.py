@@ -17,7 +17,6 @@ classifiers = [
                "Natural Language :: English"
               ],
 
-SHORT_DESC = "This module will convert video frames into images for annotations"
 
 requirements = ["tqdm",
                 "imageio",
