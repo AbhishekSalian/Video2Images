@@ -73,8 +73,8 @@ class Video2Images:
         # If output directory is not specified
         if self.out_dir is None:
 
-            # Take all path expect the video name
-            path_ = '/'.join(self.video_filepath.split(os.path.sep)[:-1])
+            # Take current working directory
+            path_ = os.getcwd()
 
             # Concatenating path with folder name
             path_ = path_ + os.path.sep + folder_name
@@ -199,7 +199,10 @@ class Video2Images:
 
         print(" The input Video FPS is", FPS, "frames/sec")
 
-        print(" Capture rate is", self.capture_rate, "frames/sec")
+        if self.capture_rate is None:
+            print(f" Capture rate is default FPS of input video i.e {FPS} frames/sec")
+        else:
+            print(" Capture rate is", self.capture_rate, "frames/sec")
 
         duration = meta_data['duration']
 
