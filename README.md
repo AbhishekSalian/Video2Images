@@ -134,7 +134,16 @@ Video2Images(video_filepath="--path-to-video-file--",
              out_dir="--path-to-output-directory--")
 
 ```
-
+## From command line 
+We can convert video frames to images by using simple command line as follows
+```
+$video2images --video_filepath <input video filepath> \
+--start_time <some integer number in seconds> \ 
+--end_time <some integer number in seconds> \
+--capture_rate <some integer capture rate> \
+--save_format <any one image extension> \
+--out_dir <output folder name where all images will be pushed>
+```
 
 #### **Note**:- The output will be saved in a folder named frames_folder_{timestamp}
 
