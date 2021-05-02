@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
     required.add_argument(
         "--filepath",
-        type=int,
+        type=str,
         help="The path to the video file",
         required=True)
 
