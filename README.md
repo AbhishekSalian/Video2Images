@@ -6,7 +6,7 @@
 [![install](https://img.shields.io/badge/pip%20install-video2images-green)](https://pypi.org/project/video2images/)
 
 [![DOI](https://zenodo.org/badge/299598465.svg)](https://zenodo.org/badge/latestdoi/299598465)
-
+[![Github All Releases](https://img.shields.io/github/downloads/AbhishekSalian/Video2Images/total.svg)]()
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/AbhishekSalian/Video2Images/master/image/logo.png"></a>
