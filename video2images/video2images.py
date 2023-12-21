@@ -117,7 +117,7 @@ class Video2Images:
                             ".tiff", ".tif", ".dicom", ".dcm"]
 
         # Checking for valid input video file extension
-        if file_extension not in VIDEO_EXTENSIONS:
+        if file_extension.lower() not in VIDEO_EXTENSIONS:
 
             sys.exit("\033[1;31m Input a Valid Video File \033[00m")
 
