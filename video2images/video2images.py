@@ -68,7 +68,7 @@ class Video2Images:
                 sys.exit("\033[1;31m Capture Frame Capture Rate cannot be <= 0 \033[00m")
 
         # Folder time stamp
-        folder_name = "frames_folder_" + str(dt.now().strftime('%Y-%m-%d %H:%M:%S'))
+        folder_name = "frames_folder_" + str(dt.now().strftime('%Y-%m-%d %H-%M-%S'))
 
         # If output directory is not specified
         if self.out_dir is None:
